@@ -1,7 +1,7 @@
 const DBconnect = require('./db')
 const express = require('express')
 const app = express()
-// const port = 6000;
+const port = process.env.PORT || 6000;
 var cors = require('cors');
 
 DBconnect();
@@ -22,6 +22,6 @@ app.get('/', (req, res)=>{
   res.send("Welcome to Melophile API");
 })
 
-// app.listen(port, () => {
-//   console.log(`Melophile is listening on port ${port}`)
-// })
+app.listen(port, () => {
+  console.log(`Melophile is listening on port ${port}`)
+})
